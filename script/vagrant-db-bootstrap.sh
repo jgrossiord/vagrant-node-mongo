@@ -20,9 +20,9 @@ echo "`date` - Start Install mongodb-10gen" >> $BOOTSTRAP_LOG_FILE
 sudo apt-get install -y -o dir::cache::archives="/vagrant/logs/apt-cache" mongodb-10gen
 echo "`date` - Ended Install mongodb-10gen" >> $BOOTSTRAP_LOG_FILE
 
-echo "`date` - Start setup init data" >> $BOOTSTRAP_LOG_FILE
-
-echo "`date` - End setup init data" >> $BOOTSTRAP_LOG_FILE
+echo "`date` - Start running mongo-init.js on Mongo" >> $BOOTSTRAP_LOG_FILE
+mongo test-application /vagrant/script/mongo-init.js
+echo "`date` - End running mongo-init.js on Mongo" >> $BOOTSTRAP_LOG_FILE
 
 echo "`date` - Ended `echo $0` - OK" >> $BOOTSTRAP_LOG_FILE
 

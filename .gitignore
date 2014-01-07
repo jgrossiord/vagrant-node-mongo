@@ -6,9 +6,9 @@ lib-cov
 *.out
 *.pid
 *.gz
+*.deb
 
 pids
-logs
 results
 
 npm-debug.log
@@ -24,5 +24,3 @@ logs/app/err.log
 logs/app/urls.txt
 logs/db/urls.txt
 logs/apt-cache/lock
-*.log
-*.deb

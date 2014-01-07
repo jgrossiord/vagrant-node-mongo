@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Vagrant-node-mongo by jgrossiord</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Vagrant-node-mongo</h1>
+        <p>All the necessary to start developing on Node / Express / Mongo with a command line.</p>
+
+        <p class="view"><a href="https://github.com/jgrossiord/vagrant-node-mongo">View the Project on GitHub <small>jgrossiord/vagrant-node-mongo</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/jgrossiord/vagrant-node-mongo/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/jgrossiord/vagrant-node-mongo/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/jgrossiord/vagrant-node-mongo">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="vagrant--silex--mysql" class="anchor" href="#vagrant--silex--mysql"><span class="octicon octicon-link"></span></a>Vagrant / Silex / MySQL</h1>
+
+<p>Vagrant setup to get a Silex on LAMP stack up and running.
+This code generate 2 VMs ('web' &amp; 'db').</p>
+
+<h2>
+<a name="requirements" class="anchor" href="#requirements"><span class="octicon octicon-link"></span></a>Requirements</h2>
+
+<ul>
+<li>Vagrant V1.2.2 min (download and install from <a href="http://downloads.vagrantup.com/">http://downloads.vagrantup.com/</a>)</li>
+<li>Virtualbox V4.2.12 min (download and install from <a href="https://www.virtualbox.org/wiki/Downloads">https://www.virtualbox.org/wiki/Downloads</a>)</li>
+</ul><h2>
+<a name="add-a-standard-box" class="anchor" href="#add-a-standard-box"><span class="octicon octicon-link"></span></a>Add a standard box</h2>
+
+<div class="highlight highlight-bash"><pre>vagrant box add precise32 http://files.vagrantup.com/precise32.box
+</pre></div>
+
+<h2>
+<a name="get-the-repository" class="anchor" href="#get-the-repository"><span class="octicon octicon-link"></span></a>Get the repository</h2>
+
+<div class="highlight highlight-bash"><pre>git clone git@github.com:jgrossiord/vagrant-silex-mysql.git
+</pre></div>
+
+<h2>
+<a name="start-the-vm" class="anchor" href="#start-the-vm"><span class="octicon octicon-link"></span></a>Start the VM</h2>
+
+<div class="highlight highlight-bash"><pre><span class="nb">cd </span>vagrant-silex-mysql
+vagrant up
+</pre></div>
+
+<p>This will startup the 2 VM's.
+For each VM, if you have more than one network card on your PC, it will ask which card you want to bridge to the VM.
+Each VM will have a private IP (10.11.12.1 &amp; 10.11.12.2) which enable the web server to contact MySQL directly and a bridge address, taken from you DHCP server, enabling you and your co-workers to connect to the VM's.
+At the end of the startup process, the URL of the application will be shown.</p>
+
+<h2>
+<a name="other-commands-see-vagrant-doc" class="anchor" href="#other-commands-see-vagrant-doc"><span class="octicon octicon-link"></span></a>Other commands (see Vagrant doc)</h2>
+
+<p>To suspend the 2 VM</p>
+
+<div class="highlight highlight-bash"><pre>vagrant <span class="nb">suspend</span>
+</pre></div>
+
+<p>To destroy the 2 VM</p>
+
+<div class="highlight highlight-bash"><pre>vagrant destroy
+</pre></div>
+
+<p>Connect in SSH to the VM's</p>
+
+<div class="highlight highlight-bash"><pre>vagrant ssh web
+vagrant ssh db
+</pre></div>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/jgrossiord">jgrossiord</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>

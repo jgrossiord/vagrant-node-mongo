@@ -23,6 +23,6 @@ logs/app/out.log
 logs/app/err.log
 logs/app/urls.txt
 logs/db/urls.txt
-logs/apt-cache/*.deb
 logs/apt-cache/lock
 *.log
+*.deb

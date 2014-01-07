@@ -13,7 +13,7 @@ results
 
 npm-debug.log
 node_modules
-
+app/test-applicaiton
 
 # Vagrant files
 .vagrant

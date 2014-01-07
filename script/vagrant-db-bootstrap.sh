@@ -10,7 +10,7 @@ bash /vagrant/script/vagrant-bootstrap.sh $BOOTSTRAP_LOG_FILE
 
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10 >> $BOOTSTRAP_LOG_FILE
 
-if [ ! -a /etc/apt/sources.list.d/mongodb.list ]; then
+if [ ! -f /etc/apt/sources.list.d/mongodb.list ]; then
 	echo "Adding mongo repo into /etc/apt/sources.list.d/mongodb.list" >> $BOOTSTRAP_LOG_FILE
 	echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/mongodb.list
 	sudo apt-get update -y -o dir::cache::archives="/vagrant/logs/apt-cache"
@@ -19,6 +19,10 @@ fi
 echo "`date` - Start Install mongodb-10gen" >> $BOOTSTRAP_LOG_FILE
 sudo apt-get install -y -o dir::cache::archives="/vagrant/logs/apt-cache" mongodb-10gen
 echo "`date` - Ended Install mongodb-10gen" >> $BOOTSTRAP_LOG_FILE
+
+echo "`date` - Start setup init data" >> $BOOTSTRAP_LOG_FILE
+
+echo "`date` - End setup init data" >> $BOOTSTRAP_LOG_FILE
 
 echo "`date` - Ended `echo $0` - OK" >> $BOOTSTRAP_LOG_FILE
 

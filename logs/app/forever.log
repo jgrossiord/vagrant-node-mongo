@@ -1,3 +1,0 @@
-error: Could not read .foreverignore file.
-error: ENOENT, open '/vagrant/app/.foreverignore'
-Server running at http://127.0.0.1:80/

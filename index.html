@@ -29,16 +29,16 @@
       </header>
       <section>
         <h1>
-<a name="vagrant--silex--mysql" class="anchor" href="#vagrant--silex--mysql"><span class="octicon octicon-link"></span></a>Vagrant / Silex / MySQL</h1>
+<a name="vagrant--node--express--mongo" class="anchor" href="#vagrant--node--express--mongo"><span class="octicon octicon-link"></span></a>Vagrant / Node / Express / Mongo</h1>
 
-<p>Vagrant setup to get a Silex on LAMP stack up and running.
-This code generate 2 VMs ('web' &amp; 'db').</p>
+<p>Vagrant setup to get a Node / Mongo stack up and running.
+This code generate 2 VMs ('app' &amp; 'db').</p>
 
 <h2>
 <a name="requirements" class="anchor" href="#requirements"><span class="octicon octicon-link"></span></a>Requirements</h2>
 
 <ul>
-<li>Vagrant V1.2.2 min (download and install from <a href="http://downloads.vagrantup.com/">http://downloads.vagrantup.com/</a>)</li>
+<li>Vagrant V1.2.2 min (download and install from <a href="http://www.vagrantup.com/downloads.html">http://www.vagrantup.com/downloads.html</a>)</li>
 <li>Virtualbox V4.2.12 min (download and install from <a href="https://www.virtualbox.org/wiki/Downloads">https://www.virtualbox.org/wiki/Downloads</a>)</li>
 </ul><h2>
 <a name="add-a-standard-box" class="anchor" href="#add-a-standard-box"><span class="octicon octicon-link"></span></a>Add a standard box</h2>
@@ -49,19 +49,19 @@ This code generate 2 VMs ('web' &amp; 'db').</p>
 <h2>
 <a name="get-the-repository" class="anchor" href="#get-the-repository"><span class="octicon octicon-link"></span></a>Get the repository</h2>
 
-<div class="highlight highlight-bash"><pre>git clone git@github.com:jgrossiord/vagrant-silex-mysql.git
+<div class="highlight highlight-bash"><pre>git clone git@github.com:jgrossiord/vagrant-node-mongo.git
 </pre></div>
 
 <h2>
 <a name="start-the-vm" class="anchor" href="#start-the-vm"><span class="octicon octicon-link"></span></a>Start the VM</h2>
 
-<div class="highlight highlight-bash"><pre><span class="nb">cd </span>vagrant-silex-mysql
+<div class="highlight highlight-bash"><pre><span class="nb">cd </span>vagrant-node-mongo
 vagrant up
 </pre></div>
 
 <p>This will startup the 2 VM's.
 For each VM, if you have more than one network card on your PC, it will ask which card you want to bridge to the VM.
-Each VM will have a private IP (10.11.12.1 &amp; 10.11.12.2) which enable the web server to contact MySQL directly and a bridge address, taken from you DHCP server, enabling you and your co-workers to connect to the VM's.
+Each VM will have a private IP (10.11.12.2 &amp; 10.11.12.3) which enable the app server to contact Mongo directly and a bridge address, taken from you DHCP server, enabling you and your co-workers to connect to the VM's.
 At the end of the startup process, the URL of the application will be shown.</p>
 
 <h2>
@@ -79,7 +79,7 @@ At the end of the startup process, the URL of the application will be shown.</p>
 
 <p>Connect in SSH to the VM's</p>
 
-<div class="highlight highlight-bash"><pre>vagrant ssh web
+<div class="highlight highlight-bash"><pre>vagrant ssh app
 vagrant ssh db
 </pre></div>
       </section>
